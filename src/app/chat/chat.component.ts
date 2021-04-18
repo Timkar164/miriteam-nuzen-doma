@@ -23,10 +23,7 @@ export class ChatComponent implements OnInit {
     this.user = window.localStorage.getItem('userinfo');
     this.mainuser = JSON.parse(this.user);
     console.log(this.mainuser);
-    setTimeout(()=>{                           //<<<---using ()=> syntax
-      console.log(1);
-      this.botsend('вас вызывают к шефу');
-    }, 30000);
+
     this.servise.get_mes(this.mainuser.id).subscribe(value => {
 
       this.chats=value;
